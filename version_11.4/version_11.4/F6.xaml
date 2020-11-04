@@ -1,0 +1,166 @@
+﻿<Window x:Class="version_11._4.F6"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:version_11._4"
+        mc:Ignorable="d"
+        Title="F6" Height="700" Width="800">
+    <!--定义五行，每行一个grid进行布局-->
+    <Grid Margin="20, 20, 20, 20">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="80"/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition Height="80"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <!--第一行，添加一个2行2列的grid-->
+        <Border BorderThickness="1.5" BorderBrush="Black" Margin="5, 2, 5, 2">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="30"/>
+                    <RowDefinition Height="35"/>
+                </Grid.RowDefinitions>
+                <TextBlock Text="所有机种名：" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="10,5,0,0"/>
+                <TextBlock Text="当前编辑机种名：" VerticalAlignment="Center" HorizontalAlignment="Left" Grid.Column="1" Margin="5,5,0,0"/>
+                <ComboBox Name="allName" Grid.Row="1" Margin="10,0,10,5" Background="White"/>
+                <TextBox Name="curName" Grid.Row="1" Grid.Column="1" Margin="5,0,10,5"/>
+            </Grid>
+        </Border>
+        <!--第二行，定义一个5行4列的grid-->
+        <Border BorderThickness="1.5" BorderBrush="Black" Margin="5,2,5,2" Grid.Row="1">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition Height="23"/>
+                    <RowDefinition Height="18"/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <TextBlock Text="平衡面数" VerticalAlignment="Bottom" Margin="10,0,0,0"/>
+                <TextBlock Text="校正方式" VerticalAlignment="Bottom" Margin="10,0,0,0" Grid.Column="1"/>
+                <TextBlock Text="转子转向" VerticalAlignment="Bottom" Margin="10,0,0,0" Grid.Column="2"/>
+                <TextBlock Text="测量时间(S)" VerticalAlignment="Bottom" Margin="10,0,0,0" Grid.Column="3"/>
+
+                <ComboBox Name="comboBox_planeCont" Background="White" Grid.Row="1" Margin="10,0,10,5" SelectedItem="0">
+                    <ComboBoxItem Name="single_plane" Content="单面"/>
+                    <ComboBoxItem Name="double_plane" Content="双面"/>
+                    <ComboBoxItem Name="trple_plane" Content="三面"/>
+                </ComboBox>
+                <ComboBox Name="comboBox_adjustWay" Background="White" Grid.Row="1" Grid.Column="1" Margin="10,0,10,5">
+                    <ComboBoxItem Name="addWeight" Content="加质量"/>
+                    <ComboBoxItem Name="minusWeight" Content="减质量"/>
+                </ComboBox>
+                <ComboBox Name="comboBox_direction" Background="White" Grid.Row="1" Grid.Column="2" Margin="10,0,10,5">
+                    <ComboBoxItem Content="逆时针"/>
+                    <ComboBoxItem Content="顺时针"/>
+                </ComboBox>
+                <ComboBox Name="comboBox_testTime" Background="White" Grid.Row="1" Grid.Column="3" Margin="10,0,10,5">
+
+                </ComboBox>
+
+                <TextBlock Text="平衡转速" VerticalAlignment="Bottom" Margin="10,0,0,0" Grid.Row="2" Grid.Column="0"/>
+                <TextBlock Text="转速范围" VerticalAlignment="Bottom" Margin="10,0,0,0" Grid.Row="2" Grid.Column="1"/>
+                <TextBlock Text="(600~9000RPM)" VerticalAlignment="Bottom" Margin="10,0,0,0" Grid.Row="3" Grid.Column="0"/>
+                <TextBlock Text="±1~50RPM" VerticalAlignment="Bottom" Margin="10,0,0,0" Grid.Row="3" Grid.Column="1"/>
+                <TextBlock Text="加速比(1~3)" VerticalAlignment="Bottom" Margin="10,0,0,0" Grid.Row="3" Grid.Column="2"/>
+                <TextBlock Text="精密测量" VerticalAlignment="Bottom" Margin="10,0,0,0" Grid.Row="3" Grid.Column="3"/>
+
+                <ComboBox Name="comboBox_precision_Measure" Background="White" Grid.Row="5" Grid.Column="4" Margin="10,0,10,5"/>
+
+
+            </Grid>
+        </Border>
+        <!--第三行，定义2个border,第一个包含一个6行4列的grid，第二个border只包含一个button-->
+        <Grid Grid.Row="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="2.5*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Border BorderThickness="1.5" BorderBrush="Black" Margin="5,2,5,2" Grid.Row="2">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition Width="130"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <TextBlock Text="P1试重(mg)" VerticalAlignment="Bottom" Margin="10,0,0,0" Grid.Row="0" Grid.Column="0"/>
+                    <TextBlock Text="P1角度" VerticalAlignment="Bottom" Margin="10,0,0,0" Grid.Row="0" Grid.Column="1"/>
+                    <TextBlock Text="P1容许量(mg)" VerticalAlignment="Bottom" Margin="10,0,0,0" Grid.Row="0" Grid.Column="2"/>
+
+
+                    <TextBlock Text="P2试重(mg)" VerticalAlignment="Bottom" Margin="10,0,0,0" Grid.Row="2" Grid.Column="0"/>
+                    <TextBlock Text="P2角度" VerticalAlignment="Bottom" Margin="10,0,0,0" Grid.Row="2" Grid.Column="1"/>
+                    <TextBlock Text="P2容许量(mg)" VerticalAlignment="Bottom" Margin="10,0,0,0" Grid.Row="2" Grid.Column="2"/>
+
+
+
+                    <TextBlock Text="P2容许量(mg)" VerticalAlignment="Bottom" Margin="10,0,0,0" Grid.Row="4" Grid.Column="2"/>
+
+                    <Button Content="P2=P1[F8]" Grid.Row="1" Grid.Column="3" Grid.RowSpan="3" Margin="0,0,15,0"/>
+                </Grid>
+            </Border>
+
+            <Border BorderThickness="1.5" BorderBrush="Black" Margin="5,2,5,2" Grid.Row="2" Grid.Column="1">
+                <Button Name="bt_caculate" Content="ISO1940计算[F5]" Margin="5,20,5,20"/>
+            </Border>
+
+
+        </Grid>
+
+
+        <!--第四行，定义一个1行4列的grid-->
+        <Border BorderThickness="1.5" BorderBrush="Black" Margin="5,2,5,2" Grid.Row="3">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="62*"/>
+                    <ColumnDefinition Width="113*"/>
+                    <ColumnDefinition Width="38*"/>
+                    <ColumnDefinition Width="34*"/>
+                </Grid.ColumnDefinitions>
+                <ComboBox Name="comboBox_adjustWay2" HorizontalAlignment="Left" Width="150" Margin="10,21,0,21.8" Background="White"/>
+                <TextBlock Text="平衡土报警（分钟）" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Right" Height="16" Margin="0,28,113.4,28.8" Width="108" Grid.ColumnSpan="2"/>
+                <StackPanel Grid.Column="3" VerticalAlignment="Center" HorizontalAlignment="Right" Orientation="Horizontal" Margin="0,28,19.8,28.8" Height="16" Width="61">
+                    <CheckBox Name="checkBox_recard"/>
+                    <TextBlock Text="条码记录"/>
+                </StackPanel>
+            </Grid>
+        </Border>
+        <!--第五行，包括三个功能按钮-->
+        <Border BorderThickness="1.5" BorderBrush="Black" Margin="5,2,5,2" Grid.Row="4">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Button Name="btn_save" Content="保存[F1]" Margin="30"/>
+                <Button Name="btn_del" Content="删除[F3]" Margin="30" Grid.Column="1"/>
+                <Button Name="btn_exit" Content="返回[F4]" Margin="30" Grid.Column="2"/>
+            </Grid>
+
+        </Border>
+
+
+    </Grid>
+</Window>
